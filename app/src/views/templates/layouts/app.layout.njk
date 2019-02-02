@@ -28,6 +28,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" 
     integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
+    <!-- Bundled Stylesheet -->
+    <link rel="stylesheet" href="css/bundle.css">
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/app.css">
 
@@ -36,7 +39,9 @@
 </head>
 <body>
 
-    {% block content %}{%- endblock %}
+    <main class="uk-offcanvas-content">
+        {% block content %}{%- endblock %}
+    </main>
     
     <!-- Scripts -->
     <script src="js/app.js"></script>

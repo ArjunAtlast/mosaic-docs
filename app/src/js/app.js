@@ -1,5 +1,5 @@
 // require bootstrap js
-require('./bootstrap');
+import "./bootstrap";
 
 /*
 * You can add your custom JavaScript below.
@@ -10,3 +10,5 @@ require('./bootstrap');
 * 
 * Use bootstrap.js to require node packages.
 */
+
+import "./plugins/prism";

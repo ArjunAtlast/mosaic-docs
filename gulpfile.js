@@ -6,6 +6,9 @@ const njkRender = require('gulp-nunjucks-render');
 const connect = require("gulp-connect");
 const sass = require('gulp-sass');
 const gutil = require('gulp-util');
+const fs = require('fs');
+const uglify = require('gulp-uglify');
+const buffer = require('vinyl-buffer');
 
 /**
  * HIGHLY RECOMMEND NOT TO EDIT THIS FILE
@@ -74,11 +77,31 @@ gulp.task("nunjucks", function() {
 gulp.task('browserify', function () {
     //log
     gutil.log("=> Building js files");
+    // babel options
+    const options = JSON.parse(fs.readFileSync("./.babelrc", "utf8"));
     //browserify
     return browserify(SOURCE.js)
+        //babelify
+        .transform("babelify", options)
+        // css loader
+        .transform('browserify-css', {
+            minify: false,
+            global: true,
+            onFlush: function(options, done) {
+                fs.appendFileSync('./app/dist/css/bundle.css', options.data);
+                
+                // Do not embed CSS into a JavaScript bundle
+                done(null);
+            }
+        })
+        //bundle
         .bundle()
         //Convert to gulp stream
         .pipe(source('app.js'))
+        //convert to buffer
+        .pipe(buffer())
+        //uglify
+        .pipe(uglify())
         //output to dist
         .pipe(gulp.dest(DEST.js))
         //livereload
@@ -130,7 +153,6 @@ gulp.task('build', gulp.series('nunjucks', 'sass', 'browserify'));
 
 // live server port number
 const PORT = 4000;
-
 
 /*
 * Starts a liveserver at port: PORT

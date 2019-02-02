@@ -16,3 +16,100 @@
     
 }
 */
+
+@mixin hook-button () {
+
+    border-radius: $border-radius-base;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+}
+
+//list bullet
+@mixin hook-list-bullet() {
+
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: auto;
+    height: auto;
+    background: none;
+    content: '\f120';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 0.8rem;
+    color: $primary;
+}
+
+//list files
+@mixin hook-list-misc() {
+
+    $folder-color: $primary;
+    $file-color: $warning;
+
+    .uk-list.uk-list-files > li {
+
+        &:not(.parent), &.parent > .title {
+            position: relative;
+            padding-left: 1.5rem;
+            &::before {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                font-size: 0.95rem;
+            }
+
+        }
+
+        &.folder:not(.parent), &.folder.parent > .title {
+            &::before { 
+                content: '\f07b';
+                color: $folder-color; 
+            }
+        }
+
+        &.file:not(.parent), &.file.parent > .title {
+            &::before { 
+                content: '\f1c9';
+                color: $file-color;
+            }
+
+            &.node::before {
+                content: '\f3d3';
+                font-family: "Font Awesome 5 Brands";
+                color: $success;
+            }
+
+            &.gulp::before {
+                content: '\f3ae';
+                font-family: "Font Awesome 5 Brands";
+                color: $danger;
+            }
+        }
+    }
+
+    .uk-list.uk-list-files > li > ul.uk-list.uk-list-files {
+        position: relative;
+        &::before {
+            content: '';
+            display: block;
+            width: 1px;
+            background: transparentize($primary, 0.7);
+            height: 100%;
+            position: absolute;
+            left: 0.425rem;
+        }
+    }
+}
+
+//description list
+@mixin hook-description-list-term() {
+
+    text-transform: none;
+    font-weight: 500;
+    font-size: 1.25rem;
+
+}

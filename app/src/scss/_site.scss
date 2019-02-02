@@ -1,0 +1,101 @@
+html, body {
+    width: 100%;
+    // height: 100%;
+}
+
+.footer {
+    background: darken($muted, 10%)
+}
+
+.vh-100 {
+    height: 100vh;
+} // <- You can remove this if you need
+
+//off-canvas bug
+.uk-offcanvas-page {
+    position: initial;
+}
+
+
+/// SIDEBAR ///
+
+#sidebar {
+
+    .uk-nav {
+
+        li a::before {
+
+            content: '\f02e';
+            font-family: "Font Awesome 5 Free";
+            font-weight: 400;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            color: $primary;
+        }
+
+        li.uk-active a::before, li a:active::before {
+            font-weight: 900;
+        }
+    }
+
+}
+
+/// END SIDEBAR ///
+
+
+/// PRISM ///
+
+:not(pre) > code[class*="language-"], pre[class*="language"] {
+    background: $secondary;
+    padding: 2rem;
+    border-top: 2px solid $primary;
+
+    &[data-title] {
+        position: relative;
+        &::before {
+            content: attr(data-title);
+            font-weight: bold;
+            color: $gray;
+            position: absolute;
+            right: 1rem;
+            top: 0.5rem;
+        }
+    }
+
+    .token.function {
+        color: $primary;
+    }
+
+    &.line-numbers .line-numbers-rows {
+        border-right-color: $primary;
+        span::before {
+            color: $muted;
+        }
+    }
+}
+
+/// END PRISM ///
+
+/// SECTIONS ///
+
+section {
+    margin: 3rem 0;
+
+    & > h2.uk-heading {
+        position: relative;
+        padding-left: 2.3rem;
+        &::before {
+            content: '\f292';
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            color: $gray;
+            font-size: 1.5rem;
+
+        }
+    }
+}
+/// END SECTIONS ///

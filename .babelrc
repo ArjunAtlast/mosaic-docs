@@ -1,0 +1,13 @@
+{
+    "presets": ["@babel/preset-env"],
+    "plugins": [
+        [
+            "prismjs", {
+                "languages": ["javascript", "css", "markup", "bash", "json"],
+                "plugins": ["line-numbers", "normalize-whitespace", "command-line"],
+                "theme": "okaidia",
+                "css": true
+            }
+        ]
+    ]
+}

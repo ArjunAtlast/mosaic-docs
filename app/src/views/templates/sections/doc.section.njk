@@ -1,113 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="A static sitebuilder framework built from gulp, nunjucks, browserify, sass and UIKit">
-    <meta name="keywords" content="tracing paper, jigsaw,design,logo,print,graphic,web design,web development">
-    <!-- Open Graph -->
-    <meta property="og:title" content="Mosaic">
-    <meta name="og:type" content="website">
-    <meta name="og:url" content="localhost:4000">
-    <meta name="og:image" content="/assets/images/logo.svg">
-
-    <!-- Recommended -->
-    <meta property="og:site_name" content="Mosaic">
-    <meta name="twitter:image:alt" content="Mosaic">
-
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@tracingpaperz">
-    <!-- Robots -->
-    <meta name="robots" content="index, follow">
-
-    <title>Mosaic</title>
-
-    <!-- FontAwesom -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" 
-    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
-    <!-- Bundled Stylesheet -->
-    <link rel="stylesheet" href="css/bundle.css">
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/app.css">
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-</head>
-<body>
-
-    <main class="uk-offcanvas-content">
-        
-
-    <div class="uk-flex uk-flex-column vh-100">
-
-        <div class="uk-section uk-section-primary uk-padding-remove" uk-sticky>
-    <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar="mode: click">
-        <div class="uk-navbar-item uk-navbar-left">
-            <a href="#sidebar" class="uk-button uk-navbar-item" uk-toggle>
-                <i class="fa fa-bars"></i>
-            </a>
-            <a href="localhost:4000" class="uk-navbar-item uk-logo uk-text-secondary uk-visible@m">
-                Mosaic
-            </a>
-        </div>
-    </nav>
-</div>
-
-        <div id="sidebar" uk-offcanvas="mode:push; overlay:true">
-    <div class="uk-offcanvas-bar">
-
-        <button class="uk-offcanvas-close" type="button" uk-close></button>
-
-        <ul class="uk-nav uk-nav-default" uk-scrollspy-nav="closest: li; scroll: true; offset:80">
-            
-            <li class="uk-nav-header">Documentation</li>
-
-            <li><a href="#installation" uk-scroll="offset:80">Installation</a></li>
-            <li><a href="#prerequisites" uk-scroll="offset:80">Prerequisites</a></li>
-            <li><a href="#getting-started" uk-scroll="offset:80">Getting Started</a></li>
-            <li><a href="#directory-structure" uk-scroll="offset:80">Directory Structure</a></li>
-            <li><a href="#using-uikit" uk-scroll="offset:80">Using UI Kit</a></li>
-            <li><a href="#using-babel" uk-scroll="offset:80">Using Babel</a></li>
-
-            <li class="uk-nav-divider"></li>
-
-
-        </ul>
-
-    </div>
-</div>
-
-        <div class="uk-container uk-margin-auto-vertical uk-text-center">
-            
-            <div class="uk-heading-hero">Mosaic</div>
-            <div class="uk-margin-medium-top">
-                <div class="uk-text-lead uk-text-muted">
-                    A static sitebuilder framework built from gulp, nunjucks, browserify, sass and UIKit
-                </div>
-            </div>
-            
-            <div class="uk-margin-large-top uk-flex uk-flex-center">
-                <a href="https://github.com/tracingpaper/mosaic" class="uk-button uk-button-primary uk-button-large">
-                    <i class="fab fa-github"></i>&nbsp;View in Github
-                </a>
-                <a href="#documentation" class="uk-button uk-button-secondary uk-button-large uk-margin-medium-left" uk-scroll="offset:80">
-                    <i class="fa fa-book"></i>&nbsp;Read Docs
-                </a>
-            </div>
-
-        </div>
-    </div>
-
-    
-    <div class="uk-section uk-section-muted" id="documentation">
+<div class="uk-section uk-section-muted" id="documentation">
     <div class="uk-container">
         <h1 class="uk-heading-divider uk-text-primary"><i class="fa fa-book"></i> Documentation</h1>
 
-        
+        {# Installation #}
         <section id="installation">
             <h2 class="uk-heading">Installation</h2>
 
@@ -133,9 +28,9 @@
                 <p>You are all set and ready to get started!</p>
             </div>
         </section>
-        
+        {# /Installation #}
 
-        
+        {# Prerequisites #}
         <section id="prerequisites">
             <h2 class="uk-heading">Prerequisites</h2>
 
@@ -150,9 +45,9 @@
             </div>
 
         </section>
-        
+        {# /Prerequisites #}
 
-        
+        {# Getting Started #}
         <section id="getting-started">
             <h2 class="uk-heading">Getting Started</h2>
 
@@ -173,9 +68,9 @@
                     <p>Visit <a target="_blank" href="http://localhost:4000/">localhost:4000</a> to see the result.</p>
                 </div>
         </section>
-        
+        {# /Getting Started #}
 
-        
+        {# Directory Structure #}
         <section id="directory-structure">
             <h2 class="uk-heading">Directory Structure</h2>
 
@@ -306,7 +201,7 @@
                         &lt;html&gt;
                             &lt;head&gt;
                                 ...
-                                &lt;title&gt; {{app.title}} &lt;/title&gt; &lt;!-- Compiled to &lt;title&gt;Mosaic&lt;/title&gt; --&gt;
+                                &lt;title&gt;{% raw %} {{app.title}} {% endraw %}&lt;/title&gt; &lt;!-- Compiled to &lt;title&gt;Mosaic&lt;/title&gt; --&gt;
                                 ...
                             &lt;/head&gt;
                             ...
@@ -337,9 +232,9 @@
 
             </div>
         </section>
-        
+        {# /Directory Structure #}
 
-        
+        {# Using UIKit #}
         <section id="using-uikit">
             <h2 class="uk-heading">Using UIKit</h2>
             <div class="content uk-margin-medium-left">
@@ -372,9 +267,9 @@
             </div>
 
         </section>
-        
+        {# /Using UIKit #}
 
-        
+        {# Using Babel #}
         <section id="using-babel">
             <h2 class="uk-heading">Using Babel</h2>
             <div class="content uk-margin-medium-left">
@@ -407,80 +302,7 @@
                 </code></pre>
             </div>
         </section>
-        
+        {# /Using Babel #}
 
     </div>
 </div>
-    
-
-    
-    <div class="uk-section uk-section-default" id="templates">
-    <div class="uk-container">
-
-        <h1 class="uk-heading-divider uk-text-primary"><i class="fas fa-palette"></i> Templates</h1>
-
-        <div class="uk-placeholder uk-text-center">
-            Coming Soon
-        </div>
-        
-    </div>
-</div>
-    
-
-    
-    <div class="uk-section uk-section-muted">
-    <div class="uk-container">
-        <div uk-grid>
-
-            <div class="uk-width-1-1 uk-width-1-3@m uk-text-center">
-                <a href="https://mozilla.github.io/nunjucks/getting-started.html" class="uk-link-muted uk-padding-small">
-                    <i class="fa fa-book"></i>  Read Nunjucks Docs
-                </a>
-            </div>
-
-            <div class="uk-width-1-1 uk-width-1-3@m uk-text-center">
-                <a href="https://sass-lang.com/guide" class="uk-link-muted uk-padding-small">
-                    <i class="fab fa-sass"></i>  Read Sass Docs
-                </a>
-            </div>
-
-            <div class="uk-width-1-1 uk-width-1-3@m uk-text-center">
-                <a href="https://getuikit.com/docs/" class="uk-link-muted uk-padding-small">
-                    <i class="fab fa-uikit"></i>  Read UIKit Docs
-                </a>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<div class="footer uk-section uk-padding-small uk-text-small">
-    <div uk-grid>
-        <div class="uk-text-center uk-text-left@m uk-width-1-1 uk-width-1-3@m">
-            Copyright 2018 &copy; Tracing Paper. All rights reserved
-        </div>
-        <div class="uk-text-center uk-width-1-1 uk-width-1-3@m">
-            Hand Crafted with <span class="uk-text-danger"><i class="fa fa-heart"></i></span> by <a class="uk-link-muted" href="https://www.instagram.com/tracingpaperofficial">Tracing Paper</a>
-        </div>
-        <div class="uk-text-center uk-text-right@m uk-width-1-1 uk-width-1-3@m">
-            <a href="https://www.facebook.com/tracingpaperofficial" class="uk-link-muted uk-padding-small">
-                <i class="fab fa-facebook"></i>
-            </a>
-            <a href="https://www.facebook.com/tracingpaperz" class="uk-link-muted uk-padding-small">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="https://www.facebook.com/tracingpaperofficial" class="uk-link-muted uk-padding-small">
-                <i class="fab fa-instagram"></i>
-            </a>
-        </div>
-    </div>
-</div>
-    
-
-
-    </main>
-    
-    <!-- Scripts -->
-    <script src="js/app.js"></script>
-</body>
-</html>
