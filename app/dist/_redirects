@@ -1,0 +1,2 @@
+# Redirect default Netlify subdomain to primary domain
+http://getmosaic.netlify.com/* http://mosaic.tracingpaper.in/:splat 301!
