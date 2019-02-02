@@ -22,6 +22,9 @@
     <!-- Robots -->
     <meta name="robots" content="index, follow">
 
+    <!-- Google Web Console -->
+    <meta name="google-site-verification" content="-UpotVbgNCZamuoxG9WYlL07Jk8PsWDRGUGIhpWJ4ps" />
+
     <title>{{app.title}}</title>
 
     <!-- FontAwesom -->
@@ -36,15 +39,6 @@
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-</head>
-<body>
-
-    <main class="uk-offcanvas-content">
-        {% block content %}{%- endblock %}
-    </main>
-    
-    <!-- Scripts -->
-    <script src="js/app.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133694983-1"></script>
@@ -55,6 +49,15 @@
 
         gtag('config', 'UA-133694983-1');
     </script>
+</head>
+<body>
+
+    <main class="uk-offcanvas-content">
+        {% block content %}{%- endblock %}
+    </main>
+    
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
 
 </body>
 </html>
