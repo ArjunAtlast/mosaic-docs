@@ -40,7 +40,7 @@
                 <ul class="uk-list uk-list-bullet">
                     <li><a target="_blank" href="https://mozilla.github.io/nunjucks/getting-started.html" class="uk-link-text">Read Nunjucks Docs</a></li>
                     <li><a target="_blank" href="https://sass-lang.com/guide" class="uk-link-text">Read Sass Docs</a></li>
-                    <li><a target="_blank" href="https://getuikit.com/docs/" class="uk-link-text">Read UIKit Docs</a></li>
+                    <li><a target="_blank" href="https://getuikit.com/docs" class="uk-link-text">Read UIKit Docs</a></li>
                 </ul>
             </div>
 
@@ -108,7 +108,7 @@
                                     </li><!-- views -->
                                 </ul>
                             </li><!-- src -->
-                            <li class="file">config.json</li>
+                            <li class="folder">config</li>
                         </ul>
                     </li><!-- app -->
                     <li class="file gulp">gulpfile.js</li>
@@ -180,17 +180,16 @@
                         </div>
                     </dd>
 
-                    <dt><i class="fas fa-file-code uk-text-warning"></i> config.json</dt>
+                    <dt><i class="fas fa-file-code uk-text-warning"></i>config</dt>
                     <dd>
-                        Contains configuration information for the project. This file can also be used to include context variables into nunjucks templates.
+                        <p>Contains configuration information for the project. There are two files <i>app.json</i> and <i>data.json</i>.</p>
+                        <p>Data in app.json can be accessed via global <i>'app'</i> object and that in data.json via <i>'data'</i> object.
 
                         <h4>Example:</h4>
-                        <h5>config.json</h5>
+                        <h5>config/app.json</h5>
                         <pre data-title="JSON" class="line-numbers"><code class="language-json">
                             {
-                                "app": {
-                                    "title": "Mosaic",
-                                }
+                                "title": "Mosaic",
                             }
                         </code></pre>
 

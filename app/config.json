@@ -2,7 +2,7 @@
     "app": {
         "title": "Mosaic",
         "description": "A static sitebuilder framework built from gulp, nunjucks, browserify, sass and UIKit",
-        "keywords": "tracing paper, jigsaw,design,logo,print,graphic,web design,web development",
+        "keywords": "tracing paper,mosaic,design,logo,print,graphic,web design,web development,babel,browserify,uikit,nunjucks,gulp,india",
         "url": "mosaic.tracingpaper.in",
         "logo": "assets/images/logo.svg",
         "icon": "assets/icons/icon@192.png",
